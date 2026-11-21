@@ -1,5 +1,6 @@
 # FairPrice — California House Value Prediction
 
+
 Predicts the median house value of a California district, explains **why** with SHAP, and checks
 whether an asking price is **Overpriced / Fair / Good Deal**.
 
