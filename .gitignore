@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.ipynb_checkpoints/
+.pytest_cache/
+# raw data is re-downloadable; the cleaned dataset in data/processed IS committed (deliverable)
+data/raw/
+.streamlit/secrets.toml
+*.log
