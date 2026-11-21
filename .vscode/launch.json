@@ -1,0 +1,11 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    { "name": "Run full pipeline", "type": "debugpy", "request": "launch",
+      "program": "${workspaceFolder}/run_pipeline.py", "cwd": "${workspaceFolder}" },
+    { "name": "Run full pipeline (fast)", "type": "debugpy", "request": "launch",
+      "program": "${workspaceFolder}/run_pipeline.py", "args": ["--fast"], "cwd": "${workspaceFolder}" },
+    { "name": "Streamlit app", "type": "debugpy", "request": "launch", "module": "streamlit",
+      "args": ["run", "app/streamlit_app.py"], "cwd": "${workspaceFolder}" }
+  ]
+}
