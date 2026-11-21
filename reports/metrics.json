@@ -1,0 +1,170 @@
+{
+  "cleaning": {
+    "before": {
+      "rows": 20640,
+      "missing_values": {},
+      "duplicate_rows": 0,
+      "out_of_range_rows": 0,
+      "capped_target_rows": 992
+    },
+    "removed": {
+      "missing_target": 0,
+      "duplicates": 0,
+      "out_of_range": 0,
+      "capped_target": 992
+    },
+    "rows_after": 19648
+  },
+  "eda": {
+    "skewness": {
+      "MedInc": 1.65,
+      "HouseAge": 0.06,
+      "AveRooms": 20.7,
+      "AveBedrms": 31.32,
+      "Population": 4.94,
+      "AveOccup": 97.64,
+      "Latitude": 0.47,
+      "Longitude": -0.3
+    },
+    "target_correlation_raw": {
+      "MedInc": 0.688,
+      "HouseAge": 0.106,
+      "AveRooms": 0.152,
+      "AveBedrms": -0.047,
+      "Population": -0.025,
+      "AveOccup": -0.024,
+      "Latitude": -0.144,
+      "Longitude": -0.046
+    },
+    "target_correlation_processed": {
+      "MedInc": 0.65,
+      "HouseAge": 0.065,
+      "AveRooms": 0.222,
+      "Population": 0.013,
+      "AveOccup": -0.251,
+      "Latitude": -0.148,
+      "Longitude": -0.046,
+      "BedroomRatio": -0.238,
+      "RoomsPerPerson": 0.313,
+      "DistToCity": -0.404
+    },
+    "high_correlation_pairs_raw": [
+      {
+        "feature_a": "AveRooms",
+        "feature_b": "AveBedrms",
+        "correlation": 0.848
+      },
+      {
+        "feature_a": "Latitude",
+        "feature_b": "Longitude",
+        "correlation": -0.925
+      }
+    ],
+    "high_correlation_pairs_engineered": [
+      {
+        "feature_a": "AveRooms",
+        "feature_b": "RoomsPerPerson",
+        "correlation": 0.882
+      },
+      {
+        "feature_a": "Latitude",
+        "feature_b": "Longitude",
+        "correlation": -0.924
+      }
+    ],
+    "high_correlation_pairs_after_clipping": [
+      {
+        "feature_a": "Latitude",
+        "feature_b": "Longitude",
+        "correlation": -0.926
+      }
+    ]
+  },
+  "leaderboard": [
+    {
+      "model": "XGBoost",
+      "family": "Conventional ML",
+      "cv_rmse_mean": 0.4047,
+      "cv_rmse_std": 0.0116,
+      "train_rmse": 0.2007,
+      "test_rmse": 0.3811,
+      "test_mae": 0.256,
+      "test_r2": 0.8411,
+      "test_mae_dollars": 25600,
+      "overfit_gap": 0.1804,
+      "fit_seconds": 86.3
+    },
+    {
+      "model": "RandomForest",
+      "family": "Conventional ML",
+      "cv_rmse_mean": 0.4391,
+      "cv_rmse_std": 0.0116,
+      "train_rmse": 0.2086,
+      "test_rmse": 0.4139,
+      "test_mae": 0.2792,
+      "test_r2": 0.8126,
+      "test_mae_dollars": 27923,
+      "overfit_gap": 0.2053,
+      "fit_seconds": 104.0
+    },
+    {
+      "model": "ANN",
+      "family": "Neural Network",
+      "cv_rmse_mean": 0.4718,
+      "cv_rmse_std": 0.0097,
+      "train_rmse": 0.4232,
+      "test_rmse": 0.4458,
+      "test_mae": 0.3055,
+      "test_r2": 0.7826,
+      "test_mae_dollars": 30547,
+      "overfit_gap": 0.0226,
+      "fit_seconds": 877.4
+    },
+    {
+      "model": "Ridge",
+      "family": "Conventional ML",
+      "cv_rmse_mean": 0.5738,
+      "cv_rmse_std": 0.0129,
+      "train_rmse": 0.5735,
+      "test_rmse": 0.5571,
+      "test_mae": 0.4136,
+      "test_r2": 0.6605,
+      "test_mae_dollars": 41364,
+      "overfit_gap": -0.0164,
+      "fit_seconds": 2.9
+    },
+    {
+      "model": "LinearRegression",
+      "family": "Conventional ML",
+      "cv_rmse_mean": 0.5738,
+      "cv_rmse_std": 0.0129,
+      "train_rmse": 0.5735,
+      "test_rmse": 0.5571,
+      "test_mae": 0.4136,
+      "test_r2": 0.6604,
+      "test_mae_dollars": 41365,
+      "overfit_gap": -0.0164,
+      "fit_seconds": 0.2
+    }
+  ],
+  "best_model": "XGBoost",
+  "best_params": {
+    "subsample": 0.85,
+    "reg_lambda": 1,
+    "n_estimators": 500,
+    "min_child_weight": 5,
+    "max_depth": 8,
+    "learning_rate": 0.03,
+    "colsample_bytree": 0.85
+  },
+  "test_metrics": {
+    "rmse": 0.38107913768792384,
+    "mae": 0.2560003328951916,
+    "r2": 0.8411208080794955
+  },
+  "ann_test_metrics": {
+    "rmse": 0.4457592258886434,
+    "mae": 0.3054715931181434,
+    "r2": 0.7826111046372896
+  }
+}

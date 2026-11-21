@@ -1,0 +1,6 @@
+model,family,cv_rmse_mean,cv_rmse_std,train_rmse,test_rmse,test_mae,test_r2,test_mae_dollars,overfit_gap,fit_seconds
+XGBoost,Conventional ML,0.4047,0.0116,0.2007,0.3811,0.256,0.8411,25600,0.1804,86.3
+RandomForest,Conventional ML,0.4391,0.0116,0.2086,0.4139,0.2792,0.8126,27923,0.2053,104.0
+ANN,Neural Network,0.4718,0.0097,0.4232,0.4458,0.3055,0.7826,30547,0.0226,877.4
+Ridge,Conventional ML,0.5738,0.0129,0.5735,0.5571,0.4136,0.6605,41364,-0.0164,2.9
+LinearRegression,Conventional ML,0.5738,0.0129,0.5735,0.5571,0.4136,0.6604,41365,-0.0164,0.2
