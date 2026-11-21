@@ -1,0 +1,93 @@
+{
+  "model_name": "XGBoost",
+  "trained_at": "2026-11-21T11:31:27",
+  "best_params": {
+    "subsample": 0.85,
+    "reg_lambda": 1,
+    "n_estimators": 500,
+    "min_child_weight": 5,
+    "max_depth": 8,
+    "learning_rate": 0.03,
+    "colsample_bytree": 0.85
+  },
+  "cv_rmse_mean": 0.4046518622152888,
+  "cv_rmse_std": 0.011573090963375261,
+  "test_metrics": {
+    "rmse": 0.38107913768792384,
+    "mae": 0.2560003328951916,
+    "r2": 0.8411208080794955
+  },
+  "test_mae_dollars": 25600,
+  "feature_ranges": {
+    "MedInc": [
+      0.4999,
+      15.0001
+    ],
+    "HouseAge": [
+      1.0,
+      52.0
+    ],
+    "AveRooms": [
+      0.8461538461538461,
+      132.53333333333333
+    ],
+    "AveBedrms": [
+      0.3333333333333333,
+      34.06666666666667
+    ],
+    "Population": [
+      6.0,
+      35682.0
+    ],
+    "AveOccup": [
+      0.6923076923076923,
+      599.7142857142857
+    ],
+    "Latitude": [
+      32.54,
+      41.95
+    ],
+    "Longitude": [
+      -124.35,
+      -114.47
+    ]
+  },
+  "feature_importance": {
+    "MedInc": 0.3684000074863434,
+    "DistToCity": 0.12389999628067017,
+    "Latitude": 0.10499999672174454,
+    "Longitude": 0.10100000351667404,
+    "AveOccup": 0.08879999816417694,
+    "RoomsPerPerson": 0.07850000262260437,
+    "BedroomRatio": 0.04740000143647194,
+    "HouseAge": 0.03959999978542328,
+    "AveRooms": 0.024900000542402267,
+    "Population": 0.02250000089406967
+  },
+  "price_unit": 100000,
+  "ann": {
+    "best_params": {
+      "activation": "elu",
+      "batch_size": 64,
+      "dropout": 0.0,
+      "hidden_layers": [
+        256,
+        128,
+        64
+      ],
+      "kernel_initializer": "glorot_uniform",
+      "l2": 1e-05,
+      "learning_rate": 0.0003049211576607365,
+      "optimizer": "adam"
+    },
+    "cv_rmse_mean": 0.471785131608258,
+    "cv_rmse_std": 0.009678470548088508,
+    "epochs_trained": 150,
+    "test_metrics": {
+      "rmse": 0.4457592258886434,
+      "mae": 0.3054715931181434,
+      "r2": 0.7826111046372896
+    },
+    "test_mae_dollars": 30547
+  }
+}
